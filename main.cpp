@@ -57,7 +57,7 @@ int main(){
   int number;
   cout << "enter number to search?" <<endl;
   cin>>number;
-  if(Search(root,number) == true){
+  if(Search(rootP,number) == true){
     cout << "found" << endl;
   }else{
     cout << "not found" << endl;
