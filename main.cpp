@@ -76,7 +76,6 @@ int main(){
   cout << "Type 1 below to enter elements maually and type 2 below to upload from a file" << endl;
   cin >> option;
   cin.get();
-  Node* rootP = NULL;
 	
      if(option == 1){
 	  //text input: reads numbers from user and adds to array   
@@ -98,7 +97,11 @@ int main(){
 		  }
 		  myFile.close();
     }
-  
+	
+    Node* rootP = NULL;
+    for(int a = 0; a < numelements; a++){
+        rootP = insert(rootP, arr[a]);
+    }
      
     int choice = 0;
     bool tf = true;
@@ -109,11 +112,6 @@ int main(){
       if(choice == 5){
           tf =false;
       }else if(choice == 4){
-         for(int a = 0; a < numelements; a++){
-		 if(arr[a] != NULL){
-        	   rootP = insert(rootP, arr[a]);
-		 }
-         }
          print(rootP, -5);
       }else if(choice == 3){
           int number;
@@ -125,17 +123,6 @@ int main(){
             cout << "not found" << endl;
           }
       }else if(choice == 2){
-          int deleteN = 0;	
-	  cout << "which number do you want to delete" << endl;
-	  cin >> deleteN;
-	  cin.get();
-          int val;
-	  for(int i = 0; i < numelements; i++){
-    		if(arr[i] == deleteN){
-    		val = i;
-		arr[i] = NULL;	
-		}	
-	  }
       }
 	    
       else if(choice == 1){
