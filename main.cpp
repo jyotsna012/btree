@@ -1,6 +1,7 @@
 // used the following youtube videos as aid for part of this project
 // https://www.youtube.com/watch?v=pYT9F8_LFTM - Data structures: Binary Search Tree
 // https://www.youtube.com/watch?v=cySVml6e_Fc - 5.10 Binary Search Trees (BST) - Insertion and Deletion Explained
+// https://www.youtube.com/watch?v=gcULXE7ViZw - Delete a node from Binary Search Tree
 // https://www.youtube.com/watch?v=COZK7NATh4k - Binary search tree - Implementation
 
 #include<iostream>
