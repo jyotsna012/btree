@@ -34,6 +34,41 @@ Node* insert(Node* root, int data){
   return root;
 }
 
+Node* FindMin(Node* root)
+{
+ while(root->left != NULL) root = root->left;
+ return root;
+}
+
+Node* Delete(Node* root, int data){
+	if(root == NULL){
+		return root;
+	}else if(data < root -> data){
+		root -> left = Delete(root->left, data);
+	}else if(data > root -> data){
+		root -> right = Delete(root->right, data);
+	}else{
+		if(root -> left == NULL && root -> right == NULL){
+			delete root;
+			root = NULL;
+		}else if(root -> left == NULL){
+			Node* temp = root;
+			root = root -> right;
+			delete temp;
+		}else if(root -> right == NULL){
+			Node* temp = root;
+			root = root -> right;
+			delete temp;
+		}else{
+			Node* temp = FindMin(root->right);
+			root->data = temp ->data;
+			root -> right = Delete(root -> right, temp -> data);
+		}
+		
+	}
+	return root;
+}
+
 bool Search(Node* root, int data){
   if(root == NULL){
     return false;
@@ -123,6 +158,7 @@ int main(){
             cout << "not found" << endl;
           }
       }else if(choice == 2){
+	 Delete(rootP, 6);     
       }
 	    
       else if(choice == 1){
