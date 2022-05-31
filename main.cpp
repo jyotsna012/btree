@@ -49,7 +49,7 @@ void print(Node *root, int space)
 {
     if (root == NULL)
         return;
-    space += 10;
+    space += 5;
     print(root->right, space);
     cout<<endl;
     for (int i = 0; i < space; i++)
@@ -103,7 +103,7 @@ int main(){
       if(choice == 5){
           tf =false;
       }else if(choice == 4){
-          print(rootP, -10);
+          print(rootP, -5);
       }else if(choice == 3){
           int number;
           cout << "enter number to search?" <<endl;
