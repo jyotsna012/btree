@@ -63,6 +63,9 @@ void print(Node *root, int space)
     print(root->left, space);
 }
 
+
+
+
 int main(){
   int* arr = new int[101];
   int numelements = 0;
@@ -94,10 +97,6 @@ int main(){
 		  myFile.close();
     }
   
-    Node* rootP = NULL;
-    for(int a = 0; a < numelements; a++){
-        rootP = insert(rootP, arr[a]);
-       }
      
     int choice = 0;
     bool tf = true;
@@ -108,7 +107,13 @@ int main(){
       if(choice == 5){
           tf =false;
       }else if(choice == 4){
-          print(rootP, -5);
+	 Node* rootP = NULL;
+         for(int a = 0; a < numelements; a++){
+		 if(arr[a] != NULL){
+        	   rootP = insert(rootP, arr[a]);
+		 }
+         }
+         print(rootP, -5);
       }else if(choice == 3){
           int number;
           cout << "enter number to search?" <<endl;
@@ -119,8 +124,19 @@ int main(){
             cout << "not found" << endl;
           }
       }else if(choice == 2){
-          cout << "N/A yet" << endl;
+          int deleteN = 0;	
+	  cout << "which number do you want to delete" << endl;
+	  cin >> deleteN;
+	  cin.get();
+          int val;
+	  for(int i = 0; i < numelements; i++){
+    		if(arr[i] == deleteN){
+    		val = i;
+		arr[i] = NULL;	
+		}	
+	  }
       }
+	    
       else if(choice == 1){
           numelements++;
           int toAdd;
