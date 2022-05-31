@@ -72,7 +72,7 @@ int main(){
             
           Node* rootP = NULL;
           for(int a = 0; a < numelements; a++){
-            rootP = insert(rootP, arr[a])
+            rootP = insert(rootP, arr[a]);
           }
   
   int number;
