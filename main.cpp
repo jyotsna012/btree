@@ -59,6 +59,7 @@ void print(Node *root, int space)
 int main(){
   int* arr = new int[101];
   int numelements = 0;
+  int option = 0;
   cout << "enter the number of elements you are inputting" << endl;
   cin >> numelements;
   cin.get();
@@ -123,5 +124,8 @@ int main(){
       }
    
 }
+
+}
+	
 
 
