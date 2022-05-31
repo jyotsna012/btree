@@ -42,6 +42,21 @@ bool Search(Node* root, int data){
   }
 }
 
+//https://www.geeksforgeeks.org/print-binary-tree-2-dimensions/
+void print(Node *root, int space)
+{
+    if (root == NULL)
+        return;
+    space += 10;
+    print(root->right, space);
+    cout<<endl;
+    for (int i = 0; i < space; i++)
+        cout<<" ";
+    cout<<root->data<<"\n";
+    print(root->left, space);
+}
+ 
+
 int main(){
   Node* rootP = NULL;
   rootP = insert(rootP, 15);
@@ -62,6 +77,8 @@ int main(){
   }else{
     cout << "not found" << endl;
   }
+  
+  print(rootP, -10);
 }
 
 
