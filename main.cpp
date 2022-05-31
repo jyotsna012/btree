@@ -55,19 +55,25 @@ void print(Node *root, int space)
     cout<<root->data<<"\n";
     print(root->left, space);
 }
- 
 
 int main(){
-  Node* rootP = NULL;
-  rootP = insert(rootP, 15);
-  rootP = insert(rootP, 10);
-  rootP = insert(rootP, 20);  
-  rootP = insert(rootP, 25);  
-  rootP = insert(rootP, 8);  
-  rootP = insert(rootP, 12);  
-  rootP = insert(rootP, 31);  
-  rootP = insert(rootP, 17);  
-  rootP = insert(rootP, 23);
+  int* arr = new int[101];
+  int numelements = 0;
+  cout << "enter the number of elements you are inputting" << endl;
+  cin >> numelements;
+  cin.get();
+  cout << "please enter your elements below. press enter between each one" << endl;       
+          for(int i = 0; i < numelements; i++){
+               int input;
+               cin >> input;
+               cin.get();
+               arr[i] = input;
+          }
+            
+          Node* rootP = NULL;
+          for(int a = 0; a < numelements; a++){
+            rootP = insert(rootP, arr[a])
+          }
   
   int number;
   cout << "enter number to search?" <<endl;
