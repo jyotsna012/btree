@@ -76,6 +76,8 @@ int main(){
   cout << "Type 1 below to enter elements maually and type 2 below to upload from a file" << endl;
   cin >> option;
   cin.get();
+  Node* rootP = NULL;
+	
      if(option == 1){
 	  //text input: reads numbers from user and adds to array   
           cout << "please enter your elements below. press enter between each one" << endl;       
@@ -107,7 +109,6 @@ int main(){
       if(choice == 5){
           tf =false;
       }else if(choice == 4){
-	 Node* rootP = NULL;
          for(int a = 0; a < numelements; a++){
 		 if(arr[a] != NULL){
         	   rootP = insert(rootP, arr[a]);
