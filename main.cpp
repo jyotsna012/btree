@@ -42,7 +42,7 @@ bool Search(Node* root, int data){
   }
 }
 
-//https://www.geeksforgeeks.org/print-binary-tree-2-dimensions/
+//used the same algorithim from Geeks for Geeks https://www.geeksforgeeks.org/print-binary-tree-2-dimensions/
 void print(Node *root, int space)
 {
     if (root == NULL)
