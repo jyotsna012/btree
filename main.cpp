@@ -159,7 +159,10 @@ int main(){
             cout << "not found" << endl;
           }
       }else if(choice == 2){
-	 Delete(rootP, 6);     
+	 cout << "what number do you want to del?" << endl;
+	 int toDel;
+	 cin>>toDel;
+	 Delete(rootP, toDel);
       }
 	    
       else if(choice == 1){
