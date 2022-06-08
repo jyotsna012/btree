@@ -58,7 +58,7 @@ Node* Delete(Node* root, int data){
 			delete temp;
 		}else if(root -> right == NULL){
 			Node* temp = root;
-			root = root -> right;
+			root = root -> left;
 			delete temp;
 		}else{
 			Node* temp = FindMin(root->right);
