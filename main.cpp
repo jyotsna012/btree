@@ -138,7 +138,7 @@ int main(){
 	     int in;
       myFile >> in;
       cout << in << endl;
-      heap[a] = in;
+      arr[a] = in;
 	     }
     }
 	
