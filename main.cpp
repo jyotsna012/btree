@@ -42,7 +42,38 @@ Node* FindMin(Node* root)
 }
 
 Node* Delete(Node* root, int data){
-	if(root == NULL){
+	if(root == NULL) return root; 
+	else if(data < root->data) root->left = Delete(root->left,data);
+	else if (data > root->data) root->right = Delete(root->right,data);
+	// Wohoo... I found you, Get ready to be deleted	
+	else {
+		// Case 1:  No child
+		if(root->left == NULL && root->right == NULL) { 
+			delete root;
+			root = NULL;
+		}
+		//Case 2: One child 
+		else if(root->left == NULL) {
+			 Node *temp = root;
+			root = root->right;
+			delete temp;
+		}
+		else if(root->right == NULL) {
+			 Node *temp = root;
+			root = root->left;
+			delete temp;
+		}
+		// case 3: 2 children
+		else { 
+			 Node *temp = FindMin(root->right);
+			root->data = temp->data;
+			root->right = Delete(root->right,temp->data);
+		}
+	}
+	return root;
+}
+
+/*	if(root == NULL){
 		return root;
 	}else if(data < root -> data){
 		root -> left = Delete(root->left, data);
@@ -67,8 +98,9 @@ Node* Delete(Node* root, int data){
 		}
 		
 	}
-	return root;
-}
+	return root;*/
+
+
 
 bool Search(Node* root, int data){
   if(root == NULL){
