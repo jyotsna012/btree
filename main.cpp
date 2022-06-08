@@ -134,12 +134,12 @@ int main(){
     		cin >> filename;
     		cin.get();
     		myFile.open(filename);
-		  int g = 0;
-		  while (g < numelements) {
-   		  myFile >> arr[g];
-   		  g++;
-		  }
-		  myFile.close();
+		for(int a = 0; a < numelements; a++){
+	     int in;
+      myFile >> in;
+      cout << in << endl;
+      heap[a] = in;
+	     }
     }
 	
     Node* rootP = NULL;
